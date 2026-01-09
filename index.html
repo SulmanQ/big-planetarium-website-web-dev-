@@ -1,0 +1,221 @@
+<!doctype html>
+<!-- Declares the document type as HTML5 -->
+
+<html lang="en">
+<!-- Sets the page language to English to support accessibility tools -->
+
+<head>
+  <!-- Defines character encoding so text displays correctly -->
+  <meta charset="utf-8">
+
+  <!-- Ensures the layout scales correctly on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title shown in the browser tab -->
+  <title>BigPlanetarium | Milky Way</title>
+
+  <!-- Loads Bootstrap CSS for layout, grid system, and components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Loads the custom stylesheet used across the website -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Navigation bar fixed to the top of the page for consistent navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+
+    <!-- Website name which also acts as a link to the home page -->
+    <a class="navbar-brand fw-bold" href="index.html">BigPlanetarium</a>
+
+    <!-- Button that toggles the navigation menu on smaller screens -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+      aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible navigation links -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Active link showing the user is currently on the Milky Way page -->
+        <li class="nav-item"><a class="nav-link active" href="index.html">Milky Way</a></li>
+
+        <!-- Link to the planets overview page -->
+        <li class="nav-item"><a class="nav-link" href="planets.html">Planets</a></li>
+
+        <!-- Link to the Mars page -->
+        <li class="nav-item"><a class="nav-link" href="mars.html">Mars</a></li>
+
+        <!-- Link to the Jupiter page -->
+        <li class="nav-item"><a class="nav-link" href="jupiter.html">Jupiter</a></li>
+
+        <!-- Link to the media and interactive content page -->
+        <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero section that introduces the website purpose -->
+<header class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <!-- Left column containing heading and call to action buttons -->
+      <div class="col-lg-7">
+
+        <!-- Main heading welcoming users to the site -->
+        <h1 class="display-5 fw-bold">Explore the Milky Way</h1>
+
+        <!-- Introductory text describing the planetarium mission -->
+        <p class="lead text-muted-custom">
+          We're a Bristol based planetarium. Our goal is to make space learning fun engaging and accessible to everyone.
+        </p>
+
+        <!-- Buttons guiding users to key sections of the website -->
+        <div class="d-flex gap-2 flex-wrap">
+          <a class="btn btn-accent btn-lg" href="planets.html">Browse planets</a>
+          <a class="btn btn-outline-light btn-lg" href="media.html">Video and activity</a>
+        </div>
+      </div>
+
+      <!-- Right column containing a visual image and caption -->
+      <div class="col-lg-5">
+        <div class="p-3 hero-card">
+
+          <!-- Image representing the Milky Way with alternative text -->
+          <img class="img-fluid rounded-3"
+            src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1200&q=70"
+            alt="A bright band of stars representing the Milky Way in the night sky">
+
+          <!-- Caption explaining the image -->
+          <p class="small mt-2 mb-0 text-muted-custom">
+            The Milky Way is our home galaxy filled with stars planets and nebulae.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Main content section -->
+<main id="main" class="py-5">
+  <div class="container">
+
+    <!-- Section explaining what the Milky Way is -->
+    <section class="mb-4">
+      <h2 class="h1">What is the Milky Way?</h2>
+      <p class="text-muted-custom">
+        The Milky Way is a huge spiral galaxy. Our Solar System sits inside one of its spiral arms.
+        When you look up at a dark night sky the Milky Way can appear like a glowing band of light.
+      </p>
+    </section>
+
+    <!-- Section presenting key concepts in card format -->
+    <section class="row g-4">
+
+      <!-- Card explaining spiral arms -->
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <h3 class="h5">Spiral arms</h3>
+          <p class="mb-0">
+            Spiral arms contain gas and dust where new stars can form.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card explaining Earth’s location in the galaxy -->
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <h3 class="h5">Our location</h3>
+          <p class="mb-0">
+            Earth orbits the Sun and the Sun orbits the center of the galaxy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card explaining why space exploration is interesting -->
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <h3 class="h5">Why it's exciting</h3>
+          <p class="mb-0">
+            Studying space helps us understand planets stars and our origins.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section highlighting featured planet pages -->
+    <section class="mt-5">
+      <h2 class="h1">Featured planet pages</h2>
+      <p class="text-muted-custom">
+        Start with these two planet pages then explore more.
+      </p>
+
+      <!-- Grid containing featured links -->
+      <div class="row g-4">
+
+        <!-- Featured Mars card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1200&q=70"
+              alt="A red planet like surface representing Mars">
+            <div class="card-body">
+              <h3 class="h5">Mars</h3>
+              <p>Rocky dusty and famous for giant volcanoes.</p>
+              <a class="btn btn-accent" href="mars.html">Read Mars</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Jupiter card -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=70"
+              alt="A planet like sphere representing Jupiter against space">
+            <div class="card-body">
+              <h3 class="h5">Jupiter</h3>
+              <p>The largest planet known for huge storms.</p>
+              <a class="btn btn-accent" href="jupiter.html">Read Jupiter</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card linking to media and interactive content -->
+        <div class="col-lg-4">
+          <div class="card h-100 p-3">
+            <h3 class="h5">Media and Activity</h3>
+            <p class="mb-3">
+              Watch a space video and try a small interactive activity.
+            </p>
+            <a class="btn btn-accent" href="media.html">Go to Media</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Footer displayed at the bottom of the page -->
+<footer class="py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+    <p class="mb-0">
+      BigPlanetarium Prototype accessible learning about space.
+    </p>
+    <p class="mb-0">
+      Made with basic HTML and CSS plus Bootstrap.
+    </p>
+  </div>
+</footer>
+
+<!-- Loads Bootstrap JavaScript for interactive components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

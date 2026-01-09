@@ -1,0 +1,321 @@
+/* 
+I originally created a very basic CSS style for this website.
+I used AI to help polish and improve the visual design while keeping my original structure.
+The goal was to make the site more visually engaging and readable, not to add complex logic.
+*/
+
+/* Root variables are used to store colours so they can be reused easily */
+:root{
+  --bg1:#050814;       /* deep space */
+  --bg2:#0b0f25;       /* navy */
+  --bg3:#121a3a;       /* blue-ish */
+  --card:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.12);
+
+  /* Accent colours used for buttons and highlights */
+  --accent:#4f8cff;    /* bright blue */
+  --accent2:#b45cff;   /* purple */
+  --accent-glow:rgba(79,140,255,0.4);
+
+  /* Main text colours */
+  --text:#eaf0ff;
+  --muted:#b8c4e6;
+}
+
+/* General styling applied to the whole page */
+body{
+  color: var(--text);
+
+  /* System fonts are used for better readability and performance */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Milky Way / nebula background */
+  /* Multiple gradients are layered to create a space themed background */
+  background:
+    radial-gradient(circle at 18% 14%, rgba(79,140,255,0.30), transparent 48%),
+    radial-gradient(circle at 82% 20%, rgba(180,92,255,0.22), transparent 50%),
+    radial-gradient(circle at 55% 85%, rgba(255,255,255,0.08), transparent 45%),
+    linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+  
+  /* Ensures the background covers the full height of the screen */
+  min-height: 100vh;
+}
+
+/* star dots - more subtle */
+/* This pseudo element adds small star like dots across the background */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+
+  /* Prevents stars from blocking clicks */
+  pointer-events: none;
+
+  /* Creates a repeating dot pattern */
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+
+  /* Makes the stars subtle */
+  opacity: 0.25;
+}
+
+/* FIX: TOP NAVBAR (fixed) - UPDATED for MUCH better visibility */
+/* Styles the navigation bar so it stays visible and readable */
+.navbar{
+  background: rgba(8, 12, 30, 0.98) !important; /* Darker navy blue */
+  border-bottom: 2px solid var(--accent);
+
+  /* Blur effect gives a glass like look */
+  backdrop-filter: blur(15px);
+
+  /* Adds depth using shadow */
+  box-shadow: 0 5px 25px rgba(0, 0, 20, 0.6);
+
+  padding: 10px 0;
+}
+
+/* FIX: Body padding to not hide content under navbar */
+/* Adds space so content does not hide behind the fixed navbar */
+body{
+  padding-top: 70px; /* Matches navbar height */
+}
+
+/* Brand logo - make it stand out */
+/* Gradient text is used to highlight the site name */
+.navbar-brand{
+  font-size: 1.5rem;
+  background: linear-gradient(to right, #6fa3ff, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 4px 0;
+}
+
+/* NAVBAR LINKS - FIXED FOR VISIBILITY */
+/* Improves spacing and readability of navigation links */
+.navbar .nav-link{
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  margin: 0 4px;
+
+  /* Smooth hover animation */
+  transition: all 0.3s ease;
+
+  position: relative;
+  color: #d0d8ff !important; /* Light blue text for visibility */
+  font-weight: 500;
+}
+
+/* Hover effect for navigation links */
+.navbar .nav-link:hover{
+  background: rgba(111, 163, 255, 0.25);
+  transform: translateY(-2px);
+  color: white !important;
+}
+
+/* ACTIVE LINK - COMPLETELY REVISED FOR VISIBILITY */
+/* Highlights the current page */
+.navbar .nav-link.active{
+  background: linear-gradient(135deg, #4f8cff, #9d4dff);
+  color: white !important;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(79, 140, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add glowing indicator for active link */
+/* Small line under the active navigation item */
+.navbar .nav-link.active::after{
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 20%;
+  width: 60%;
+  height: 3px;
+  background: #6fa3ff;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #6fa3ff;
+}
+
+/* Make the hamburger menu visible on mobile */
+/* Improves contrast of the mobile menu button */
+.navbar-toggler{
+  border-color: rgba(111, 163, 255, 0.5);
+}
+
+/* Custom hamburger icon for better visibility */
+.navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero section */
+/* Background styling for the top hero area */
+.hero{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(79,140,255,0.24), transparent 52%),
+    radial-gradient(circle at 85% 25%, rgba(180,92,255,0.18), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Container used inside the hero section */
+.hero-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+}
+
+/* Cards */
+/* Used for planet and content cards */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 16px;
+
+  /* Smooth hover animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(79, 140, 255, 0.15);
+}
+
+/* Muted text colour used inside cards */
+.card p, .text-muted-custom{
+  color: var(--muted);
+}
+
+/* Image styling inside cards */
+.card img{
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 180px;
+
+  /* Ensures images scale correctly */
+  object-fit: cover;
+}
+
+/* UPDATED: Buttons - make them stand out more */
+/* Main button style used across the site */
+.btn-accent{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+
+  /* Smooth animation for hover */
+  transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.btn-accent:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px var(--accent-glow);
+  color: white;
+}
+
+/* Decorative shine effect for buttons */
+.btn-accent::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 20%,
+    rgba(255,255,255,0.2) 50%,
+    rgba(255,255,255,0) 80%
+  );
+  transform: rotate(30deg);
+  transition: all 0.5s ease;
+}
+
+/* Moves shine effect on hover */
+.btn-accent:hover::after{
+  left: 100%;
+}
+
+/* Secondary button style */
+.btn-outline-light{
+  border: 2px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for secondary buttons */
+.btn-outline-light:hover{
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(79, 140, 255, 0.2);
+  color: white;
+}
+
+/* Links inside cards - make them obvious */
+.card a.btn-accent{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.card a.btn-outline-light{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Links */
+/* Default link styling */
+a{ 
+  color: #9cc0ff; 
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect for links */
+a:hover{ 
+  color: #cfe0ff; 
+  text-decoration: underline;
+}
+
+/* Footer */
+/* Styles the footer area */
+footer{
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: var(--muted);
+  background: rgba(5, 8, 20, 0.7);
+  margin-top: 40px;
+}
+
+/* Simple focus outline for accessibility */
+/* Makes keyboard navigation visible */
+:focus{
+  outline: 3px solid rgba(79,140,255,0.75);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+/* Changes layout slightly on smaller screens */
+@media (max-width: 768px) {
+  body{
+    padding-top: 65px; /* Slightly less on mobile */
+  }
+  
+  .navbar .nav-link{
+    margin: 4px 0;
+    text-align: center;
+  }
+  
+  .navbar .nav-link.active::after{
+    left: 40%;
+    width: 20%;
+  }
+}

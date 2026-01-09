@@ -1,0 +1,171 @@
+<!doctype html>
+<!-- Declares the document type as HTML5 -->
+<html lang="en">
+<!-- Sets the language to English for accessibility and screen readers -->
+
+<head>
+  <!-- Character encoding for proper text rendering -->
+  <meta charset="utf-8">
+
+  <!-- Makes the page responsive on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Page title shown in browser tab -->
+  <title>BigPlanetarium | Media</title>
+
+  <!-- Bootstrap CSS for layout, grid system, and components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS file for Milky Way theme and styling -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ===================== NAVIGATION BAR ===================== -->
+<!-- Fixed-top navigation bar for consistent site navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+
+    <!-- Website logo / brand name -->
+    <a class="navbar-brand fw-bold" href="index.html">BigPlanetarium</a>
+
+    <!-- Hamburger menu button for mobile screens -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#nav" aria-controls="nav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible navigation links -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Navigation links to different pages -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Milky Way</a></li>
+        <li class="nav-item"><a class="nav-link" href="planets.html">Planets</a></li>
+        <li class="nav-item"><a class="nav-link" href="mars.html">Mars</a></li>
+        <li class="nav-item"><a class="nav-link" href="jupiter.html">Jupiter</a></li>
+
+        <!-- Active page highlighted for user awareness -->
+        <li class="nav-item"><a class="nav-link active" href="media.html">Media</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main id="main" class="py-5">
+  <div class="container">
+
+    <!-- Page header -->
+    <header class="mb-4">
+      <h1 class="display-6 fw-bold">Media & Interactive Learning</h1>
+
+      <!-- Introductory text explaining page purpose -->
+      <p class="text-muted-custom">
+        Watch an educational video about planets and explore fun space facts.
+      </p>
+    </header>
+
+    <!-- ===================== VIDEO SECTION ===================== -->
+    <section class="mb-5">
+      <h2 class="h4 mb-3">Planets Video</h2>
+
+      <!-- Responsive video container using Bootstrap ratio utility -->
+      <div class="ratio ratio-16x9 rounded-3 overflow-hidden bg-dark">
+
+        <!-- HTML5 video element -->
+        <!-- autoplay: video starts automatically -->
+        <!-- loop: video repeats -->
+        <!-- muted: required for autoplay in modern browsers -->
+        <!-- playsinline: prevents fullscreen on mobile -->
+        <!-- controls: shows play/pause and volume controls -->
+        <video autoplay loop muted playsinline controls>
+
+          <!-- Local video file source -->
+          <source src="Files/PlanetsVideo.mp4" type="video/mp4">
+
+          <!-- Fallback text for unsupported browsers -->
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Caption text under the video -->
+      <p class="small text-muted-custom mt-2">
+        This video explains key facts about planets in our Solar System.
+      </p>
+    </section>
+
+    <!-- ===================== INTERACTIVE FACT SECTION ===================== -->
+    <section class="mb-5">
+      <h2 class="h4 mb-3">Did You Know?</h2>
+
+      <!-- Card container for interactive content -->
+      <div class="card p-4">
+
+        <!-- Text element that will be updated by JavaScript -->
+        <p id="factText" class="text-muted-custom mb-3">
+          Click the button to reveal a space fact.
+        </p>
+
+        <!-- Button that triggers JavaScript interaction -->
+        <button id="factBtn" class="btn btn-accent" type="button">
+          Show Space Fact
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================== ACCESSIBILITY SECTION ===================== -->
+    <section>
+      <h2 class="h4 mb-2">Accessibility</h2>
+
+      <!-- Explanation of accessibility considerations -->
+      <p class="text-muted-custom mb-0">
+        This page includes accessible video controls, clear headings,
+        keyboard navigation, and responsive design for different screen sizes.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="py-4">
+  <div class="container text-center text-muted-custom">
+    <p class="mb-0">
+      BigPlanetarium (Prototype) — Space learning for everyone.
+    </p>
+  </div>
+</footer>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  // Array of space-related facts
+  const facts = [
+    "The Milky Way contains billions of stars.",
+    "Mars is called the Red Planet because of iron-rich dust.",
+    "Jupiter is the largest planet in our Solar System.",
+    "Saturn’s rings are made of ice and rock.",
+    "Light from the Sun takes about 8 minutes to reach Earth."
+  ];
+
+  // Get references to the button and text elements
+  const button = document.getElementById("factBtn");
+  const text = document.getElementById("factText");
+
+  // Event listener for button click
+  button.addEventListener("click", function () {
+
+    // Select a random fact from the array
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+
+    // Update the paragraph text with the selected fact
+    text.textContent = randomFact;
+  });
+</script>
+
+<!-- Bootstrap JavaScript bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

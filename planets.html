@@ -1,0 +1,218 @@
+<!doctype html>
+<!-- Declares the document type as HTML5 -->
+
+<html lang="en">
+<!-- Sets the language of the document to English for accessibility tools -->
+
+<head>
+  <!-- Defines character encoding so text renders correctly -->
+  <meta charset="utf-8">
+
+  <!-- Ensures the layout is responsive on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title shown in the browser tab -->
+  <title>BigPlanetarium | Planets</title>
+
+  <!-- Loads Bootstrap CSS for layout and components -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Loads the custom site stylesheet -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Fixed navigation bar for consistent navigation across the website -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+
+    <!-- Website name that links back to the home page -->
+    <a class="navbar-brand fw-bold" href="index.html">BigPlanetarium</a>
+
+    <!-- Toggle button for mobile navigation -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible navigation menu -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Milky Way</a></li>
+        <li class="nav-item"><a class="nav-link active" href="planets.html">Planets</a></li>
+        <li class="nav-item"><a class="nav-link" href="mars.html">Mars</a></li>
+        <li class="nav-item"><a class="nav-link" href="jupiter.html">Jupiter</a></li>
+        <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main content area of the planets page -->
+<main id="main" class="py-5">
+  <div class="container">
+
+    <!-- Main heading describing the content of the page -->
+    <h1 class="display-6 fw-bold">Planets of Our Solar System</h1>
+
+    <!-- Introductory paragraph explaining the scope of the page -->
+    <p class="text-muted-custom mb-4">
+      Below are all eight planets in our Solar System. Some planets have their own dedicated pages
+      where you can explore them in more detail.
+    </p>
+
+    <!-- Grid container holding all planet cards -->
+    <div class="row g-4">
+
+      <!-- Mercury -->
+      <!-- This section displays information about Mercury -->
+      <!-- Some external image links were tested here but were not working reliably -->
+      <!-- A Wikimedia image was used instead to ensure the image always loads -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <!-- below code giving error -->
+          <!-- <img src="https://images.unsplash.com/photo-1580428180121-7c4b66ed47a1?auto=format&fit=crop&w=800&q=70" alt="Mercury planet"> -->
+          <!-- <img src="https://images.unsplash.com/photo-1614728893526-3c6a6c7c7c8a?auto=format&fit=crop&w=800&q=70"
+     alt="Mercury planet"> -->
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg"
+     alt="Mercury planet in true colour">
+
+          <div class="card-body">
+            <h2 class="h6">Mercury</h2>
+            <p class="text-muted-custom">The smallest planet and closest to the Sun.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venus -->
+      <!-- Initial Unsplash image links for Venus were not working consistently -->
+      <!-- A local image file was used to ensure reliable loading -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <!-- <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?auto=format&fit=crop&w=800&q=70" alt="Venus planet"> -->
+          
+          <!-- <img src="https://images.unsplash.com/photo-1614728893916-9fef5a0f8c4c?auto=format&fit=crop&w=800&q=70" -->
+          <!-- alt="Venus planet with thick clouds"> -->
+
+          <img src="Files/Venus.jpg" alt="Venus planet surface">
+
+          <div class="card-body">
+            <h2 class="h6">Venus</h2>
+            <p class="text-muted-custom">Hot and cloudy with a thick atmosphere.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earth -->
+      <!-- Earth image loaded correctly using an external source -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=70" alt="Earth from space">
+          <div class="card-body">
+            <h2 class="h6">Earth</h2>
+            <p class="text-muted-custom">Our home planet, the only known planet with life.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mars -->
+      <!-- Several external image approaches were attempted but did not work reliably -->
+      <!-- A locally stored image was used to guarantee that the image displays -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <!-- <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=800&q=70" alt="Mars surface"> -->
+          <!-- below image error -->
+          <!-- <img src="https://images.unsplash.com/photo-1614315517650-3771cf72d18b?auto=format&fit=crop&w=800&q=70" alt="Saturn rings"> -->
+          <!-- <img src="https://images.unsplash.com/photo-1580428180121-7c4b66ed47a1?auto=format&fit=crop&w=800&q=70" -->
+          <!-- alt="Mercury planet close to the Sun"> -->
+
+          <!-- the splash links for mercury were giving errors, so i witched to below link -->
+
+          <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" -->
+          <!-- alt="Mercury planet in true colour"> -->
+
+          <!-- above appraoches didnot work, so download a image from google images and using below approach -->
+
+          <img src="Files/Mars.jpg" alt="Mars planet surface">  
+
+          <div class="card-body">
+            <h2 class="h6">Mars</h2>
+            <p class="text-muted-custom">A rocky red planet with giant volcanoes.</p>
+            <a class="btn btn-accent btn-sm" href="mars.html">Read more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jupiter -->
+      <!-- External image source for Jupiter worked correctly -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=70" alt="Jupiter planet">
+          <div class="card-body">
+            <h2 class="h6">Jupiter</h2>
+            <p class="text-muted-custom">The largest planet with powerful storms.</p>
+            <a class="btn btn-accent btn-sm" href="jupiter.html">Read more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saturn -->
+      <!-- Unsplash image for Saturn was tested and works -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          
+          <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?auto=format&fit=crop&w=800&q=70" alt="Saturn planet">
+          <!-- <img src="https://images.unsplash.com/photo-1614315517650-3771cf72d18b?auto=format&fit=crop&w=800&q=70" alt="Saturn rings"> -->
+
+          <div class="card-body">
+            <h2 class="h6">Saturn</h2>
+            <p class="text-muted-custom">Famous for its beautiful rings.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uranus -->
+      <!-- External image was not used here -->
+      <!-- A local image file was added to prevent broken image links -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <!-- <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=800&q=70" alt="Uranus planet"> -->
+          
+          <img src="Files/Uranus.jpg" alt="Uranus ice giant planet">
+          
+          <div class="card-body">
+            <h2 class="h6">Uranus</h2>
+            <p class="text-muted-custom">An ice giant that rotates on its side.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neptune -->
+      <!-- Neptune image loaded correctly using an external source -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=800&q=70" alt="Neptune planet">
+          <div class="card-body">
+            <h2 class="h6">Neptune</h2>
+            <p class="text-muted-custom">A cold, windy ice giant far from the Sun.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Footer displayed at the bottom of the page -->
+<footer class="py-4">
+  <div class="container">
+    <p class="mb-0">BigPlanetarium (Prototype)</p>
+  </div>
+</footer>
+
+<!-- Loads Bootstrap JavaScript for interactive elements such as the navigation menu -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
